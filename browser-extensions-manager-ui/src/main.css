@@ -1,0 +1,7 @@
+main {
+  display: flex;
+  flex-wrap: wrap;
+}
+main section {
+  width: 33%;
+}/*# sourceMappingURL=main.css.map */

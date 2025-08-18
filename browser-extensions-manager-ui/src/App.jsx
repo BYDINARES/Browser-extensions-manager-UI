@@ -21,8 +21,7 @@ export default function App() {
       <header>
         <img src={logo} alt="The logo of the App" />
       </header>
-
-      {extensionsArray}
+      <main>{extensionsArray}</main>
     </>
   );
 }
