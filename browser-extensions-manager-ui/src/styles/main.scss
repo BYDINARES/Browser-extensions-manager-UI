@@ -1,7 +1,21 @@
+body {
+  padding-left: 7%;
+  padding-right: 7%;
+  padding-top: 3%;
+}
+
 main {
   display: flex;
   flex-wrap: wrap;
   section {
     width: 33%;
   }
+}
+
+//filter
+.filter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }

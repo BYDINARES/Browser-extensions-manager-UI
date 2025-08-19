@@ -21,6 +21,17 @@ export default function App() {
       <header>
         <img src={logo} alt="The logo of the App" />
       </header>
+
+      <section className="filter">
+        <h1>Extensions List</h1>
+
+        <div>
+          <button>All</button>
+          <button>Inactive</button>
+          <button>Active</button>
+        </div>
+      </section>
+
       <main>{extensionsArray}</main>
     </>
   );
