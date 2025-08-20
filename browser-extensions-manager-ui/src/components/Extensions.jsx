@@ -12,10 +12,10 @@ export default function Extensions(props) {
       <div className="bottom">
         <button>Remove</button>
 
-        <div className="toggle-switch">
-          <input type="checkbox" id="check" />
-          <label htmlFor="check" className="empty-space"></label>
-        </div>
+        <label class="switch">
+          <input type="checkbox" />
+          <span class="slider round"></span>
+        </label>
       </div>
     </section>
   );
