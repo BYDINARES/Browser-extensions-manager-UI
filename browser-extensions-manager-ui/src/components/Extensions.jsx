@@ -2,7 +2,7 @@ export default function Extensions(props) {
   let isItActive = props.isActive;
 
   return (
-    <section>
+    <section className="component-body">
       <div className="top">
         <img src={props.img} alt="The image of the extension" />
         <button></button>
