@@ -5,7 +5,6 @@ export default function Extensions(props) {
     <section className="component-body">
       <div className="top">
         <img src={props.img} alt="The image of the extension" />
-        <button></button>
         <h1>{props.name}</h1>
         <p>{props.description}</p>
       </div>
