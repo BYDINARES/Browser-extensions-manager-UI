@@ -1,6 +1,20 @@
 import Extensions from "./components/Extensions";
 import data from "./data/data.json";
 import logo from "./assets/logo.svg";
+import { useState } from "react";
+
+const [activeExtensions, setActiveExtensions] = useState(data);
+const [filter, setFilter] = useState("all");
+
+const toggleIsValue = (id) => {
+  setActiveExtensions((prev) =>
+    prev.map((ext) =>
+      ext.name === id ? { ...ext, isValue: !ext.isValue } : ext
+    )
+  );
+
+  console.log("Hello");
+};
 
 const extensionsArray = data.map((item) => {
   return (
@@ -9,6 +23,7 @@ const extensionsArray = data.map((item) => {
       name={item.name}
       description={item.description}
       isActive={item.isActive}
+      handleCLick={toggleIsValue}
     />
   );
 });

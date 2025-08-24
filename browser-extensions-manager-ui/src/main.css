@@ -1,3 +1,9 @@
+@font-face {
+  font-family: "Noto Sans";
+  src: url("../assets/fonts/NotoSans-VariableFont_wdth,wght.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 body {
   padding-left: 7%;
   padding-right: 7%;
@@ -31,9 +37,25 @@ main {
   justify-content: space-between;
   align-items: center;
 }
+.filter div {
+  display: flex;
+  gap: 5%;
+  width: 20%;
+  justify-content: space-between;
+}
+.filter div button {
+  background-color: #2f2f30;
+  color: white;
+  border-radius: 10%;
+  padding: 5%;
+}
+.filter div button.active {
+  background-color: red;
+  color: transparent;
+}
 
 .component-body {
-  width: 28.5%;
+  width: 28.6%;
   height: 12vw;
   margin-bottom: 0.1%;
   padding: 2%;
@@ -76,7 +98,7 @@ main {
   align-items: center;
 }
 
-/*===================== The switch - the box around the slider ======================== */
+/* The switch - the box around the slider ======================== */
 .switch {
   position: relative;
   display: inline-block;

@@ -11,7 +11,7 @@ export default function Extensions(props) {
       <div className="bottom">
         <button>Remove</button>
 
-        <label class="switch">
+        <label class="switch" onToggle={() => toggleIsActive(props.name)}>
           <input type="checkbox" />
           <span class="slider round"></span>
         </label>
