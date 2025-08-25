@@ -1,8 +1,6 @@
 export default function Extensions(props) {
-  let isItActive = props.isActive;
-
   return (
-    <section className="component-body">
+    <section className="component-body" id={props.name}>
       <div className="top">
         <img src={props.img} alt="The image of the extension" />
         <h1>{props.name}</h1>
@@ -11,9 +9,13 @@ export default function Extensions(props) {
       <div className="bottom">
         <button>Remove</button>
 
-        <label class="switch" onToggle={() => toggleIsActive(props.name)}>
-          <input type="checkbox" />
-          <span class="slider round"></span>
+        <label className="switch">
+          <input
+            type="checkbox"
+            checked={props.isActive} // controlled by state
+            onChange={() => props.handleClick(props.name)} // updates state
+          />
+          <span className="slider round"></span>
         </label>
       </div>
     </section>
