@@ -7,8 +7,9 @@ import { useState } from "react";
 export default function App() {
   const [extensions, setExtensions] = useState(data);
   const [filter, setFilter] = useState("all");
+  const [background, setBackground] = useState("warm");
 
-  const [wasClicked, setWasClicked] = useState(/* All the filters */);
+  /* const [wasClicked, setWasClicked] = useState(all filters) */
 
   // Toggle active/inactive
   const toggleIsActive = (id) => {
@@ -19,6 +20,11 @@ export default function App() {
     );
   };
 
+  //Remove the extension from the list
+  const removeFromList = (id) => {
+    setExtensions((prev) => prev.filter((ext) => ext.name !== id));
+  };
+
   // Filter list
   const filteredExtensions = extensions.filter((ext) => {
     if (filter === "active") return ext.isActive;
@@ -26,11 +32,19 @@ export default function App() {
     return true; // "all"
   });
 
+  //The backgrounds
+  const styles = {
+    backgroundColor: "somrthing", //HERE YOU SET THE BACKGROUND AND THEN YOU TRY to add the logic
+    //Maybe with a usetate()
+  };
+
   return (
     <>
       <header>
         <img className="logo" src={logo} alt="The logo of the App" />
-        <img className="sun" src={sun} alt="The image of the Sun" />
+        <button className="sun-container">
+          <img className="sun" src={sun} alt="The image of the Sun" />
+        </button>
       </header>
 
       <section className="filter">
@@ -52,6 +66,7 @@ export default function App() {
             description={item.description}
             isActive={item.isActive}
             handleClick={toggleIsActive}
+            removeFromList={removeFromList}
           />
         ))}
       </main>

@@ -7,7 +7,7 @@ export default function Extensions(props) {
         <p>{props.description}</p>
       </div>
       <div className="bottom">
-        <button>Remove</button>
+        <button onClick={() => props.removeFromList(props.name)}>Remove</button>
 
         <label className="switch">
           <input
