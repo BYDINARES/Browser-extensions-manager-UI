@@ -5,10 +5,17 @@
   font-style: normal;
 }
 body {
+  padding: 0%;
+  margin: 0%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#root {
   padding-left: 7%;
   padding-right: 7%;
   padding-top: 3%;
-  background: linear-gradient(to bottom, #010416, #0e0e41);
   color: #fff;
 }
 
@@ -29,8 +36,14 @@ header .sun-container {
   padding: 0.5%;
   border-radius: 10px;
   background-color: #3b3b43;
+  border: none;
+  transition: all 0.2s ease;
 }
-header .sun-container:active, header .sun-container:hover {
+header .sun-container:active {
+  background-color: #656565;
+  transform: scale(1.4);
+}
+header .sun-container:hover {
   background-color: #656565;
 }
 
@@ -58,22 +71,22 @@ main {
   height: 100%;
   justify-content: space-between;
   height: auto;
+  padding: 0%;
 }
 .filter div button {
   background-color: #2f2f30;
+  border: none;
   color: white;
   border-radius: 20px;
   padding: 5%;
   font-size: 1.2rem;
   height: 1%;
+  transition: all 0.2s ease-in-out;
 }
-.filter div button:focus {
+.filter div button:focus, .filter div button:hover {
   background-color: red;
   color: black;
-}
-.filter div button:hover {
-  background-color: red;
-  color: black;
+  transform: scale(1.07);
 }
 
 .component-body {

@@ -2,16 +2,22 @@ import Extensions from "./components/Extensions";
 import data from "./data/data.json";
 import logo from "./assets/logo.svg";
 import sun from "./assets/icon-sun.svg";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 export default function App() {
   const [extensions, setExtensions] = useState(data);
   const [filter, setFilter] = useState("all");
-  const [background, setBackground] = useState("warm");
 
-  /* const [wasClicked, setWasClicked] = useState(all filters) */
+  // all possible backgrounds
+  const backgroundColors = [
+    "linear-gradient(to bottom, #010416, #0e0e41)",
+    "linear-gradient(to bottom, #010416, #e02c2cff)",
+    "linear-gradient(to bottom, #010416, #e08c2cff)",
+  ];
 
-  // Toggle active/inactive
+  const [backgroundStyle, setBackground] = useState(backgroundColors[0]);
+  const currentIndex = useRef(0); // stores current background index
+
   const toggleIsActive = (id) => {
     setExtensions((prev) =>
       prev.map((ext) =>
@@ -20,29 +26,32 @@ export default function App() {
     );
   };
 
-  //Remove the extension from the list
   const removeFromList = (id) => {
     setExtensions((prev) => prev.filter((ext) => ext.name !== id));
   };
 
-  // Filter list
   const filteredExtensions = extensions.filter((ext) => {
     if (filter === "active") return ext.isActive;
     if (filter === "inactive") return !ext.isActive;
     return true; // "all"
   });
 
-  //The backgrounds
-  const styles = {
-    backgroundColor: "somrthing", //HERE YOU SET THE BACKGROUND AND THEN YOU TRY to add the logic
-    //Maybe with a usetate()
-  };
+  function toggleBackgrounds() {
+    // pick a new random index different from current
+    let newIndex;
+    do {
+      newIndex = Math.floor(Math.random() * backgroundColors.length);
+    } while (newIndex === currentIndex.current && backgroundColors.length > 1);
+
+    currentIndex.current = newIndex;
+    setBackground(backgroundColors[newIndex]);
+  }
 
   return (
-    <>
+    <div style={{ background: backgroundStyle, minHeight: "100vh" }}>
       <header>
         <img className="logo" src={logo} alt="The logo of the App" />
-        <button className="sun-container">
+        <button className="sun-container" onClick={toggleBackgrounds}>
           <img className="sun" src={sun} alt="The image of the Sun" />
         </button>
       </header>
@@ -70,6 +79,6 @@ export default function App() {
           />
         ))}
       </main>
-    </>
+    </div>
   );
 }
