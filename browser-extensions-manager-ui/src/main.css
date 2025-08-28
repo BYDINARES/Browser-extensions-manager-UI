@@ -7,16 +7,19 @@
 body {
   padding: 0%;
   margin: 0%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  font-family: "Noto Sans", sans-serif;
 }
 
 #root {
-  padding-left: 7%;
-  padding-right: 7%;
-  padding-top: 3%;
   color: #fff;
+  height: auto;
+}
+#root > div {
+  padding-left: 7vw;
+  padding-right: 7vw;
+  padding-top: 3%;
+  height: 86vw;
+  width: 86%;
 }
 
 header {
@@ -51,10 +54,10 @@ main {
   display: flex;
   flex-wrap: wrap;
   gap: 1%;
-  height: 64vw;
   width: 100%;
+  height: auto;
   padding: 0%;
-  padding-bottom: 6%;
+  padding-bottom: 8%;
 }
 
 .filter {
@@ -81,18 +84,19 @@ main {
   padding: 5%;
   font-size: 1.2rem;
   height: 1%;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 .filter div button:focus, .filter div button:hover {
   background-color: red;
   color: black;
+  font-weight: 700;
   transform: scale(1.07);
 }
 
 .component-body {
   width: 28.6%;
   height: 12vw;
-  margin-bottom: 0.1%;
+  margin-bottom: 1%;
   padding: 2%;
   background-color: #21303b;
   border-radius: 10px;
@@ -139,6 +143,14 @@ main {
   border-radius: 15px;
   background-color: transparent;
   color: #ffffff;
+  transition: all 0.2s ease-in-out;
+}
+.component-body .bottom button:hover, .component-body .bottom button:focus {
+  color: black;
+  background-color: #ccc;
+}
+.component-body .bottom button:focus {
+  transform: scale(2);
 }
 
 /* The switch - the box around the slider ======================== */

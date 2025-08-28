@@ -37,18 +37,13 @@ export default function App() {
   });
 
   function toggleBackgrounds() {
-    // pick a new random index different from current
-    let newIndex;
-    do {
-      newIndex = Math.floor(Math.random() * backgroundColors.length);
-    } while (newIndex === currentIndex.current && backgroundColors.length > 1);
-
+    let newIndex = (currentIndex.current + 1) % backgroundColors.length;
     currentIndex.current = newIndex;
     setBackground(backgroundColors[newIndex]);
   }
 
   return (
-    <div style={{ background: backgroundStyle, minHeight: "100vh" }}>
+    <div style={{ background: backgroundStyle }}>
       <header>
         <img className="logo" src={logo} alt="The logo of the App" />
         <button className="sun-container" onClick={toggleBackgrounds}>
