@@ -1,0 +1,13 @@
+{
+  "liveSassCompile.settings.autoprefix": [],
+  "liveSassCompile.settings.formats": [
+    {
+      "format": "expanded",
+      "extensionName": ".css",
+      "savePath": "/browser-extensions-manager-ui/src",
+      "savePathReplacementPairs": null
+    }
+  ],
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
+}
