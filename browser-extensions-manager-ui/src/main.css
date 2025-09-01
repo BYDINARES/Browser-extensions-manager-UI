@@ -43,7 +43,8 @@ body {
   background-color: #3b3b43;
   border: none;
   transition: all 0.2s ease;
-  height: 90%;
+  height: 80%;
+  width: 10%;
 }
 #root header .sun-container:active {
   background-color: #656565;
@@ -214,52 +215,6 @@ body {
   transform: translateX(120%);
 }
 
-/* //Media query for Large Screens (Desktops)
-@media screen and (max-width: 1440px) {
-  #root {
-    div {
-      header {
-      }
-      .filter {
-      }
-      main {
-        .component-body {
-          .top {
-          }
-        }
-      }
-    }
-  }
-}
-
-//Media query for large tablets
-@media screen and (max-width: 1024px) {
-  #root {
-    div {
-      header {
-      }
-      .filter {
-      }
-      main {
-      }
-    }
-  }
-}
-
-//Media query for tablets
-@media screen and (max-width: 768px) {
-  #root {
-    div {
-      header {
-      }
-      .filter {
-      }
-      main {
-      }
-    }
-  }
-}
- */
 @media screen and (max-width: 576px) {
   #root div {
     height: 580vw;
@@ -287,6 +242,7 @@ body {
   #root div .filter > div button {
     height: min-content;
     margin-bottom: 0%;
+    font-size: 4vw;
   }
   #root div main .component-body {
     width: 100%;
@@ -294,25 +250,43 @@ body {
     margin-bottom: 2%;
     padding: 4%;
   }
+  #root div main .component-body .top {
+    height: 70%;
+    margin: 0%;
+    padding: 0%;
+  }
   #root div main .component-body .top img {
     margin-top: 6%;
     font-weight: 800;
   }
   #root div main .component-body .top h1 {
+    height: 100px;
     margin-top: 2%;
   }
   #root div main .component-body .top p {
-    font-size: 1.5rem;
+    font-size: 4vw;
     margin: 0%;
-    margin-top: 5%;
     margin-left: 3%;
     padding-right: 10%;
     font-weight: 100;
     text-align: left;
   }
+  #root div main .component-body .bottom {
+    height: 30%;
+  }
   #root div main .component-body .bottom button {
-    width: 20%;
+    width: 22%;
     font-size: 1.2rem;
     border-radius: 40px;
+  }
+  #root div main .component-body .bottom .switch {
+    height: 8vw;
+    width: 18vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #root div main .component-body .bottom .switch .slider {
+    height: 8vw;
   }
 }/*# sourceMappingURL=main.css.map */
